@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data noupdate="1">
+		<record id="regex_vin_sn" model="ir.model.fields.regex">
+            <field name="regex">[0-9A-Za-z]{17}</field>
+            <field name="name">Serial Number</field>
+        </record>
+		<record id="ir_model_validator_line_0" model="ir.model.validator.line">
+			<field name="regex_id" ref="regex_vin_sn"/>
+			<field name="field_id" ref="fleet.field_fleet_vehicle_vin_sn"/>
+			<field name="model_id" ref="fleet.model_fleet_vehicle"/>
+		</record>
+	</data>
+</openerp>
